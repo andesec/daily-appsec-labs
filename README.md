@@ -50,6 +50,8 @@ Launch all services using Docker Compose:
 docker-compose up -d
 ```
 
+> **Note**: If you have Docker Compose V2, use `docker compose up -d` (with a space instead of a hyphen)
+
 This command will:
 - Pull all required Docker images
 - Build the frontend and API containers
@@ -232,6 +234,20 @@ docker-compose logs keycloak
 ```
 
 Wait for the message: "Keycloak started"
+
+**Common Issues:**
+
+1. **"Something went wrong" error in admin console**: If you see errors about "Host header is required", restart the Keycloak container:
+   ```bash
+   docker-compose restart keycloak
+   ```
+
+2. **Admin console not loading**: Ensure you're accessing Keycloak directly at http://localhost:8080 (not through the gateway)
+
+3. **Database connection errors**: Keycloak requires PostgreSQL to be fully initialized. If you see database errors, restart Keycloak:
+   ```bash
+   docker-compose restart keycloak
+   ```
 
 ### Database Connection Errors
 
