@@ -1,2 +1,1 @@
-# daily-appsec-labs
-A repository with daily appsec labs practice.
+Topic 1: Design OAuth 2.0 Authorization Code Flow with PKCE for a multi-tenant SaaS (SPA+API)
